@@ -1,8 +1,17 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { FrontpageComponent } from './pages/frontpage/frontpage.component';
+import { PagenotfoundComponent } from './pages/pagenotfound/pagenotfound.component';
 
 
-const routes: Routes = [];
+const routes: Routes = [
+
+  { path: '', component: FrontpageComponent },
+  { path: '**', component: PagenotfoundComponent } //404 error page
+
+
+
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
