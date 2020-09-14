@@ -1,0 +1,7 @@
+<p>basket works!</p>
+
+<section style="color: white" *ngFor="let item of bs.basketItems">
+    {{item.id}} - {{item.quantity}}
+</section>
+
+<button (click)="bs.addToBasket(1234)">Add</button>

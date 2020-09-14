@@ -15,6 +15,9 @@ export class HttpService {
     return this.http.post('https://api.mediehuset.net/token', header);
   }
 
+  getProduct(id) {
+    return this.http.get(`https://api.mediehuset.net/stringsonline/productgroups/${id}`);
+  }
 
 
   getProducts() {

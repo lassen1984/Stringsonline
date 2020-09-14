@@ -21,6 +21,9 @@ import { BreadcrumbsComponent } from './partials/breadcrumbs/breadcrumbs.compone
 import { SidecategoryComponent } from './partials/sidecategory/sidecategory.component';
 import { SearchresultComponent } from './pages/searchresult/searchresult.component';
 import { SearchbarComponent } from './partials/searchbar/searchbar.component';
+import { BasketComponent } from './pages/basket/basket.component';
+import { ProductsComponent } from './pages/products/products.component';
+import { ProductCardComponent } from './pages/products/product-card/product-card.component';
 
 
 
@@ -39,7 +42,10 @@ import { SearchbarComponent } from './partials/searchbar/searchbar.component';
     BreadcrumbsComponent,
     SidecategoryComponent,
     SearchresultComponent,
-    SearchbarComponent
+    SearchbarComponent,
+    BasketComponent,
+    ProductsComponent,
+    ProductCardComponent
   ],
 
   imports: [

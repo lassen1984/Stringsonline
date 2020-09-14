@@ -1,0 +1,5 @@
+<section *ngIf="product">
+    <app-product-card *ngFor="let item of product" [image]="item.image_fullpath">
+
+    </app-product-card>
+</section>
