@@ -1,15 +1,59 @@
-<nav class="desktop">
-    <ul>
-        <li><a routerLink="/">Forside</a></li>
-        <!-- <li>|</li> -->
-        <li><a routerLink="/side2">Side 2</a></li>
-        <!-- <li>|</li> -->
-        <li><a routerLink="#">Side 3</a></li>
-        <!-- <li>|</li> -->
-        <li><a routerLink="#">Side 4</a></li>
-        <!-- <li>|</li> -->
-        <li><a routerLink="#">Side 5</a></li>
-    </ul>
+<nav #mainNav (click)="toggleClass()" class="menu menu_cornered">
+
+    <div class="thumb_me">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+
+    <div class="gridcontainer">
+
+        <!-- <figure>
+            <img src="../../../assets/header-bg.png" alt="Guitar">
+            <figcaption>
+                <ul class="mainnav">
+                    <li><a routerLink="/">Forside</a></li>
+
+                    <li><a routerLink="/side2">Salgs & handelsbetingelser</a></li>
+
+                    <li><a routerLink="#">Login</a></li>
+                </ul>
+            </figcaption>
+        </figure> -->
+
+        <ul class="mainnav">
+            <li><a routerLink="/">Forside</a></li>
+
+            <li><a routerLink="/side2">Salgs & handelsbetingelser</a></li>
+
+            <li><a routerLink="#">Login</a></li>
+        </ul>
+
+
+
+
+
+
+
+        <div class="searchcontainer">
+
+            <div>
+                <span class="material-icons">email</span>
+                <p>SALES@STRINGSONLINE.COM</p>
+                <p>+45 98 12 22 68</p>
+            </div>
+
+            <div>
+                <input type="text"><button>OK</button>
+            </div>
+
+
+        </div>
+
+
+
+    </div>
 
 
 </nav>
