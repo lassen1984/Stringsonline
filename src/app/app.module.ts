@@ -18,6 +18,9 @@ import { LoginComponent } from './pages/login/login.component';
 import { SliderComponent } from './partials/slider/slider.component';
 import { TermsComponent } from './pages/terms/terms.component';
 import { BreadcrumbsComponent } from './partials/breadcrumbs/breadcrumbs.component';
+import { SidecategoryComponent } from './partials/sidecategory/sidecategory.component';
+import { SearchresultComponent } from './pages/searchresult/searchresult.component';
+import { SearchbarComponent } from './partials/searchbar/searchbar.component';
 
 
 
@@ -33,7 +36,10 @@ import { BreadcrumbsComponent } from './partials/breadcrumbs/breadcrumbs.compone
     LoginComponent,
     SliderComponent,
     TermsComponent,
-    BreadcrumbsComponent
+    BreadcrumbsComponent,
+    SidecategoryComponent,
+    SearchresultComponent,
+    SearchbarComponent
   ],
 
   imports: [

@@ -1,9 +1,13 @@
 .menu{
 
-    height: 150px;
+    height: 100px;
 // width: 80%;
 margin: 0 auto;
 padding: 2em;
+
+margin-top: 30px;
+
+border: solid red 4px;
 
     .thumb_me{
         display: none;
@@ -46,10 +50,16 @@ ul{
 
     display: grid;
     grid-template-rows: 1fr 2fr;
+
+    input{
+        width: 100%;
+    }
+
     
 
     span{
         color: white;
+        font-size: 16px;
         
     }
 

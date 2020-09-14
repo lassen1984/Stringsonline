@@ -16,4 +16,11 @@ export class HttpService {
   }
 
 
+
+  getProducts() {
+    return this.http.get('https://api.mediehuset.net/stringsonline/');
+  }
+
+
+
 }
