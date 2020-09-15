@@ -1,11 +1,16 @@
 <p>basket works!</p>
 
 <section style="color: white" *ngFor="let item of bs.basketItems">
-    {{item.id}} - {{item.quantity}}
+
+    {{item.id}} - {{item.quantity}} <button (click)="bs.minusQuantity(item.id)">Remove 1</button> <button
+        (click)="bs.removeFromBasket(item.id)">Remove line</button>
+
 </section>
 
 <button (click)="bs.addToBasket(1234)">Add</button>
 
-<button (click)="bs.minusQuantity(1234)">Remove 1</button>
+
+
+<!-- <button (click)="bs.removeFromBasket()">Remove entire line</button> -->
 
 <button (click)="bs.deleteBasket()">Tøm kurv</button>
