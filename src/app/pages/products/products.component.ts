@@ -20,7 +20,9 @@ export class ProductsComponent implements OnInit {
     this.product = this.product.group.products;
     console.log(this.product);
 
+
     this.router.events.subscribe(async res => {
+
 
       if (res instanceof NavigationEnd) {
         this.productId = this.route.snapshot.params.id;

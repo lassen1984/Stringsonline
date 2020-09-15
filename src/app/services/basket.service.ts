@@ -16,8 +16,11 @@ export class BasketService {
   addToBasket(productId: number) {
     // debugger;
     if (this.basketItems.some(e => e.id === productId)) {
+
       for (let i = 0; i < this.basketItems.length; i++) {
+
         if (this.basketItems[i].id === productId) {
+
           this.basketItems[i].quantity++;
           break;
         }
@@ -33,13 +36,33 @@ export class BasketService {
   }
 
   minusQuantity(productId: number) {
+
+    if (this.basketItems.some(e => e.id === productId)) {
+
+      for (let i = 0; i < this.basketItems.length; i++) {
+
+        if (this.basketItems[i].id === productId) {
+
+          if (this.basketItems[i].quantity > 0) {
+
+            this.basketItems[i].quantity--;
+
+            break;
+
+          }
+
+        }
+      }
+    }
+
+    localStorage.setItem(this.basketKey, JSON.stringify(this.basketItems));
     //TODO: Tæl en ned
 
     //API: Opdater linje i kurv
   }
 
   removeFromBasket(productId: number) {
-    //TODO: fjern linie helt
+    //TODO: fjern linje helt
 
     //API: Slet linje fra kurv
   }
@@ -57,7 +80,9 @@ export class BasketService {
   }
 
   deleteBasket() {
-    //API - Tøm kurv
+    localStorage.setItem(this.basketKey, '[]');
+    location.reload();
+
   }
 
 

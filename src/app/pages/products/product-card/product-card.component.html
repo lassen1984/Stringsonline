@@ -1,6 +1,25 @@
 <article>
     <figure>
-        <img src="{{image}}" alt="">
+
+        <img src="{{image}}" alt="Produkt billede">
+
     </figure>
+
+    <div class="textwrapper">
+        <h3>{{name}}</h3>
+        <p>{{description_short}}</p>
+    </div>
+
+    <div class="infowrapper">
+        <div class="pricetag">
+            <p>{{price}}</p>
+        </div>
+        <button (click)="basket.addToBasket(id)">Læg i kurv</button>
+        <div class="stock">
+
+            <p>{{stock}} på lager</p>
+
+        </div>
+    </div>
 
 </article>
