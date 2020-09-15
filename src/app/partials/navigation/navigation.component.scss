@@ -5,7 +5,7 @@
 margin: 0 auto;
 padding: 2em;
 
-margin-top: 30px;
+padding-top: 80px;
 
 border: solid red 4px;
 
@@ -30,7 +30,7 @@ ul{
 
 .gridcontainer{
     display: grid;
-    grid-template-columns: 2.5fr 1fr;
+    grid-template-columns: 2.4fr 1.2fr;
     gap:1em;
     
     
@@ -52,13 +52,10 @@ ul{
 
 align-self: center;
 
-
-
-
     span{
         color: white;
         font-size: 16px;
-        
+        padding: 0.5em;
     }
 
    p{
@@ -66,8 +63,21 @@ align-self: center;
        font-size: 0.5em;
    }
 
+   .basket{
+    font-size: 30px;
+    
+   }
 
 }
+
+.contactinfo{
+    position: absolute;
+    // background-color: deepskyblue;
+    margin-top: -60px;
+    margin-left: -50px;
+    
+}
+
 
     .mainnav{
 
@@ -133,24 +143,7 @@ ul{
 
         align-content: space-evenly;
         justify-items: center;
-        
-        
-        
+
     }
-
-    
-
-
-
-
-
-    
-
 }
-
-
-
-
-
-  
 }

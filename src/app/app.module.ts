@@ -24,6 +24,7 @@ import { SearchbarComponent } from './partials/searchbar/searchbar.component';
 import { BasketComponent } from './pages/basket/basket.component';
 import { ProductsComponent } from './pages/products/products.component';
 import { ProductCardComponent } from './pages/products/product-card/product-card.component';
+import { BasketCardComponent } from './pages/basket/basket-card/basket-card.component';
 
 
 
@@ -45,7 +46,8 @@ import { ProductCardComponent } from './pages/products/product-card/product-card
     SearchbarComponent,
     BasketComponent,
     ProductsComponent,
-    ProductCardComponent
+    ProductCardComponent,
+    BasketCardComponent
   ],
 
   imports: [

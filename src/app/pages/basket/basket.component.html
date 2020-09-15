@@ -1,13 +1,60 @@
 <p>basket works!</p>
 
+
+
 <section style="color: white" *ngFor="let item of bs.basketItems">
 
+    <article>
+
+        <figure>
+            <img src="" alt="">
+        </figure>
+
+
+        <h2>Name of product</h2>
+
+
+        <div class="handling-container">
+
+            <p>antal</p>
+
+            <div class="addminusquantity">
+                <button (click)="bs.minusQuantity(item.id)">minus</button>
+                <div class="quantity">{{item.quantity}}</div>
+                <button (click)="bs.addToBasket(item.id)">plus</button>
+            </div>
+
+            <div class="pricetag">price</div>
+
+            <button (click)="bs.removeFromBasket(item.id)">Remove line</button>
+
+
+
+        </div>
+
+
+    </article>
+
+
+
+
+
+
+
+    <!-- 
     {{item.id}} - {{item.quantity}} <button (click)="bs.minusQuantity(item.id)">Remove 1</button> <button
         (click)="bs.removeFromBasket(item.id)">Remove line</button>
 
+ -->
+
+
+
 </section>
 
-<button (click)="bs.addToBasket(1234)">Add</button>
+
+
+<!-- <p>testknap</p> -->
+<!-- <button (click)="bs.addToBasket(1234)">Add</button> -->
 
 
 

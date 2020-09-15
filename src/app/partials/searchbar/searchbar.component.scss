@@ -7,20 +7,23 @@
     input{
         
         
-        height: 34px;
-        width: 150px;
+        height: 36px;
+        width: 160px;
         border-radius: 4px;
         border-color: #1F5E5B;
         border-style: solid;
         border-width: 1px;
         background-color:#0A1D1C;
+        vertical-align: bottom
     }
 
     button{
         background-color: #00F9B6;
         border-radius: 5px;
         border:0;
-        height: 34px;
+        height: 38px;
+        width: 50px;
+        margin-left: 0.5em;
         
 
         span{
