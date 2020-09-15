@@ -9,10 +9,10 @@ import { ProductCardComponent } from '../../pages/products/product-card/product-
 })
 export class BasketComponent implements OnInit {
 
-  bs: BasketService;
 
-  constructor() {
-    this.bs = new BasketService;
+
+  constructor(public bs: BasketService) {
+
 
   }
 

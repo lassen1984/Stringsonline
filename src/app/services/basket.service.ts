@@ -1,4 +1,7 @@
+import { HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { HttpService } from './http.service';
+
 
 @Injectable({
   providedIn: 'root'
@@ -7,14 +10,15 @@ export class BasketService {
 
   basketKey: string = 'basket';
 
-  basketItems: any = {};
+  basketItems: any = [];
 
-  constructor() {
-    this.getBasket();
+
+  constructor(private http: HttpService) {
+    this.populateBasket();
   }
 
   addToBasket(productId: number) {
-    // debugger;
+
     if (this.basketItems.some(e => e.id === productId)) {
 
       for (let i = 0; i < this.basketItems.length; i++) {
@@ -90,16 +94,41 @@ export class BasketService {
     //API: Slet linje fra kurv
   }
 
-  getBasket() {
-    //TODO: Check if logged in -> Get basket from backend and add to localstorage
+  updateBasketFromLogin() {
+    if (this.basketItems.length > 0) {
+      this.http.delete('https://api.mediehuset.net/stringsonline/cart')
+        .subscribe((res: any) => {
 
+          for (let i = 0; i < this.basketItems.length; i++) {
+            let body = new HttpParams()
+              .set('product_id', this.basketItems[i].id)
+              .set('quantity', this.basketItems[i].quantity)
+
+            this.http.post('https://api.mediehuset.net/stringsonline/cart', body).subscribe((res: any) => {
+
+              var added = res;
+            })
+          }
+        })
+    } else {
+      this.http.get('https://api.mediehuset.net/stringsonline/cart')
+        .subscribe((res: any) => {
+          localStorage.setItem(this.basketKey, JSON.stringify(res.cartLines));
+        })
+    }
+
+
+    this.http.get('https://api.mediehuset.net/stringsonline/cart').subscribe((res: any) => {
+      let items = res;
+    })
+  }
+
+
+  populateBasket() {
     let basket = localStorage.getItem(this.basketKey);
-
     if (basket) {
       this.basketItems = JSON.parse(basket);
     }
-
-    // API - Hent kurv
   }
 
   deleteBasket() {

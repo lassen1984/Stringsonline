@@ -1,10 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { FormBuilder, Validators } from '@angular/forms'
-
-import { CookieService } from 'ngx-cookie-service';
-import { HttpService } from 'src/app/services/http.service';
-
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-login',
@@ -14,9 +11,8 @@ import { HttpService } from 'src/app/services/http.service';
 export class LoginComponent implements OnInit {
 
   constructor(
-    private cookie: CookieService,
     private formBuilder: FormBuilder,
-    private http: HttpService
+    private userService: UserService
   ) { }
 
   login = this.formBuilder.group({
@@ -28,23 +24,25 @@ export class LoginComponent implements OnInit {
   }
 
   submit() {
-    console.log(this.login.get('username').value);
-    console.log(this.login.get('password').value);
+    let username = this.login.get('username').value;
+    let password = this.login.get('password').value;
+    this.userService.login(username, password);
 
-    const formData = new FormData();
+    // const formData = new FormData();
 
-    formData.append('username', this.login.get('username').value);
-    formData.append('password', this.login.get('password').value);
+    // formData.append('username', this.login.get('username').value);
+    // formData.append('password', this.login.get('password').value);
 
-    this.http.getLogin(formData).subscribe((res: any) => {
-      console.log(res.access_token);
-      if (res.access_token) {
-        this.cookie.set('token', res.access_token);
-        this.cookie.set('userid', res.user_id);
-        location.reload();
-      }
+    // this.http.post('https://api.mediehuset.net/token', formData)
+    //   .subscribe((res: any) => { //.getLogin(formData)
+    //     console.log(res.access_token);
+    //     if (res.access_token) {
+    //       this.cookie.set('token', res.access_token);
+    //       this.cookie.set('userid', res.user_id);
+    //       location.reload();
+    //     }
 
-    })
+    //   })
 
   }
 
