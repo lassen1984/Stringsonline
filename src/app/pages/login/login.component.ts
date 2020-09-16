@@ -28,21 +28,7 @@ export class LoginComponent implements OnInit {
     let password = this.login.get('password').value;
     this.userService.login(username, password);
 
-    // const formData = new FormData();
 
-    // formData.append('username', this.login.get('username').value);
-    // formData.append('password', this.login.get('password').value);
-
-    // this.http.post('https://api.mediehuset.net/token', formData)
-    //   .subscribe((res: any) => { //.getLogin(formData)
-    //     console.log(res.access_token);
-    //     if (res.access_token) {
-    //       this.cookie.set('token', res.access_token);
-    //       this.cookie.set('userid', res.user_id);
-    //       location.reload();
-    //     }
-
-    //   })
 
   }
 

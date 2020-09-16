@@ -15,7 +15,9 @@
 
             <li><a routerLink="/betingelser">Salgs & handelsbetingelser</a></li>
 
-            <li><a routerLink="/login">Login</a></li>
+            <li *ngIf="!userHandler.isLoggedIn()"><a routerLink="/login">Login</a></li>
+            <li *ngIf="userHandler.isLoggedIn()"><button id="loggedin"><a
+                        (click)="userHandler.logout()">Logout</a></button></li>
         </ul>
 
 

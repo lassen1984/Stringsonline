@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
 import { BasketService } from './basket.service';
 import { HttpService } from './http.service';
@@ -10,7 +11,7 @@ export class UserService {
   tokenKey: string = 'token';
   userIdKey: string = 'userid';
 
-  constructor(private cookieService: CookieService, private http: HttpService, private basketService: BasketService) { }
+  constructor(private router: Router, private cookieService: CookieService, private http: HttpService, private basketService: BasketService) { }
 
   login(username: string, password: string) {
     const formData = new FormData();
@@ -26,7 +27,7 @@ export class UserService {
           this.cookieService.set(this.userIdKey, res.user_id);
 
           this.basketService.updateBasketFromLogin();
-          // location.reload();
+          this.router.navigateByUrl('/');
         }
       })
   }

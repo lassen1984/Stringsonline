@@ -3,6 +3,33 @@ h1{
     font-weight: 500;
 }
 
+h3{
+    padding: 0.5em 0;
+}
+
+
+
 div{
     display: block;
+}
+
+label{
+    display: block;
+    color: #FFFFFF;
+    font-size: 0.7em;
+
+}
+
+input{
+    background-color: #0A1D1C;
+    border-style: solid;
+    border-color: #102F2D;
+    border-radius: 3px;
+    color: #FFFFFF;
+
+}
+
+button{
+    margin-top: 10px;
+    padding: 0 1em;
 }

@@ -1,0 +1,38 @@
+.wrapper{
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    float: right;
+    justify-items: right;
+    
+.subtotal{
+  
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    text-align: center;
+    margin-right: 15px;
+
+    button{
+        width: 45px;
+        height: 45px;
+        border-radius: 15px;
+        background-color: #D10061;
+        border: 0;
+        color:white;
+    }
+
+}
+
+#tobasket{
+    margin-top: 10px;
+    margin-right: 15px;
+    width: 125px;
+    height: 50px;
+    background-color: #00F9B6;
+    border:0;
+    border: solid 1px #8BFFF9;
+    color:#1F5E5B;
+    border-radius: 10px;
+
+   
+}
+}

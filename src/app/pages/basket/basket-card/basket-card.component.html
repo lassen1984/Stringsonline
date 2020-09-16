@@ -13,14 +13,26 @@
 
 
         <div class="addminusquantity">
-            <button (click)="bs.minusQuantity(id)">minus</button>
-            <div class="quantity">{{quantity}}</div>
-            <button (click)="bs.addToBasket(id)">plus</button>
+            <button class="minus" (click)="bs.minusQuantity(id)">
+
+                <span class="material-icons">
+                    remove
+                </span></button>
+
+            <div class="quantity">
+                <p class="quant" #total>{{quantity}}</p>
+            </div>
+
+            <button class="plus" (click)="bs.addToBasket(id)"><span class="material-icons">
+                    add
+                </span></button>
         </div>
 
         <div class="pricetag">{{price}}</div>
 
-        <button (click)="bs.removeFromBasket(id)">Remove line</button>
+        <button class="remove" (click)="bs.removeFromBasket(id)"> <span class="material-icons">
+                close
+            </span></button>
 
 
 

@@ -1,13 +1,13 @@
 <section>
     <h1>Login</h1>
-    <h2>Indtast brugernavn og adgangskode for at logge på</h2>
+    <h3>Indtast brugernavn og adgangskode for at logge på</h3>
     <!-- Brugernavn -->
 
     <form [formGroup]="login" (ngSubmit)="submit()">
 
         <div class="form-group">
 
-            <label for="username">Brugernavn</label>
+            <label for="username">Brugernavn:</label>
             <input ngModel formControlName="username" id="username" type="text" class="form-control">
 
         </div>
@@ -16,7 +16,7 @@
 
         <div class="form-group">
 
-            <label for="password">Adgangskode</label>
+            <label for="password">Adgangskode:</label>
             <input type="text" ngModel formControlName="password" id="password" type="password" class="form-control">
 
         </div>
