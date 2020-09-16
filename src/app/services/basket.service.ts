@@ -1,5 +1,6 @@
 import { HttpParams } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { Injectable, Input } from '@angular/core';
+import { Subject } from 'rxjs';
 import { HttpService } from './http.service';
 
 
@@ -7,6 +8,8 @@ import { HttpService } from './http.service';
   providedIn: 'root'
 })
 export class BasketService {
+
+  basketSubject = new Subject();
 
   basketKey: string = 'basket';
 
@@ -16,6 +19,8 @@ export class BasketService {
   constructor(private http: HttpService) {
     this.populateBasket();
   }
+
+
 
   addToBasket(productId: number) {
 
@@ -34,6 +39,7 @@ export class BasketService {
     }
 
     localStorage.setItem(this.basketKey, JSON.stringify(this.basketItems));
+    this.basketSubject.next('Basket changed');
 
     //TODO: If logged in. Add to backend basket
     //API: Opret linje i kurv - Opdater linje i kurv
@@ -58,6 +64,9 @@ export class BasketService {
             setTimeout(() => {
 
               this.removeFromBasket(this.basketItems[i].id);
+              this.basketSubject.next('Basket changed');
+
+
 
             }, 150);
           }
@@ -71,6 +80,8 @@ export class BasketService {
 
 
     localStorage.setItem(this.basketKey, JSON.stringify(this.basketItems));
+    this.basketSubject.next('Basket changed');
+
     //TODO: Tæl en ned
 
     //API: Opdater linje i kurv
@@ -137,6 +148,19 @@ export class BasketService {
     location.reload();
 
   }
+
+
+  jasonParse = JSON.parse(localStorage.getItem(this.basketKey)).length;
+
+
+
+
+  // countItemsInBasket() {
+
+  //   console.log(this.jasonParse);
+
+  // return JSON.parse(localStorage.getItem(this.basketKey)).length
+  // }
 
 
 

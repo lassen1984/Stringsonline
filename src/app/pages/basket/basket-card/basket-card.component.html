@@ -1,28 +1,26 @@
-<p>basket-card works!</p>
+<article style="color: white">
 
-<article>
-
-    <figure>
-        <img src="" alt="">
-    </figure>
+    <figure><img src="{{image}}" alt=""></figure>
 
 
-    <h2>Name of product</h2>
+    <h2>{{name}}</h2>
 
 
     <div class="handling-container">
 
-        <p>antal</p>
+
+        <p>antal:</p>
+
 
         <div class="addminusquantity">
-            <button>minus</button>
-            <div class="quantity">number</div>
-            <button>plus</button>
+            <button (click)="bs.minusQuantity(id)">minus</button>
+            <div class="quantity">{{quantity}}</div>
+            <button (click)="bs.addToBasket(id)">plus</button>
         </div>
 
-        <div class="pricetag">price</div>
+        <div class="pricetag">{{price}}</div>
 
-        <button>Remove line</button>
+        <button (click)="bs.removeFromBasket(id)">Remove line</button>
 
 
 

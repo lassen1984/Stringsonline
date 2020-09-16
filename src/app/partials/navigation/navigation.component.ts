@@ -1,4 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
+import { BasketService } from 'src/app/services/basket.service';
+
 
 @Component({
   selector: 'app-navigation',
@@ -9,7 +11,7 @@ export class NavigationComponent implements OnInit {
 
   @ViewChild('mainNav') mainNav;
 
-  constructor() { }
+  constructor(public basketService: BasketService) { }
 
   ngOnInit(): void {
   }
@@ -17,5 +19,8 @@ export class NavigationComponent implements OnInit {
   toggleClass() {
     this.mainNav.nativeElement.classList.toggle('menu_cornered');
   }
+
+
+
 
 }

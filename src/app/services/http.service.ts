@@ -52,10 +52,13 @@ export class HttpService {
   }
 
 
+
   getProducts() {
     return this.http.get('https://api.mediehuset.net/stringsonline/');
   }
 
-
+  getProductDetails(id) {
+    return this.http.get(`https://api.mediehuset.net/stringsonline/products/${id}`);
+  }
 
 }
