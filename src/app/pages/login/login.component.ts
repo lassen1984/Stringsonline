@@ -29,5 +29,5 @@ export class LoginComponent implements OnInit {
     this.userService.login(username, password);
   }
 
-
+  get form() { return this.login.controls; }
 }

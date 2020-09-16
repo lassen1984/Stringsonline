@@ -8,8 +8,13 @@
         <div class="form-group">
 
             <label for="username">Brugernavn:</label>
-            <input ngModel formControlName="username" id="username" type="text" class="form-control">
+            <input formControlName="username" id="username" type="text" class="form-control">
+            <p class="danger" *ngIf="!form.username.valid && form.username.touched"><span class="material-icons">
+                    undo
+                </span> Skal udfyldes</p>
+            <div>
 
+            </div>
         </div>
 
         <!-- Password -->
@@ -18,12 +23,12 @@
 
             <label for="password">Adgangskode:</label>
             <input type="text" ngModel formControlName="password" id="password" type="password" class="form-control">
-
+            <p class="danger" *ngIf="!form.password.valid && form.password.touched"><span class="material-icons">
+                    undo
+                </span> Skal udfyldes</p>
         </div>
 
-        <button>Login</button>
-
-
+        <button [disabled]="!login.valid">Login</button>
 
 
     </form>

@@ -25,6 +25,7 @@ import { BasketComponent } from './pages/basket/basket.component';
 import { ProductsComponent } from './pages/products/products.component';
 import { ProductCardComponent } from './pages/products/product-card/product-card.component';
 import { BasketCardComponent } from './pages/basket/basket-card/basket-card.component';
+import { ProductdetailsComponent } from './pages/productdetails/productdetails.component';
 
 
 
@@ -47,7 +48,8 @@ import { BasketCardComponent } from './pages/basket/basket-card/basket-card.comp
     BasketComponent,
     ProductsComponent,
     ProductCardComponent,
-    BasketCardComponent
+    BasketCardComponent,
+    ProductdetailsComponent
   ],
 
   imports: [
