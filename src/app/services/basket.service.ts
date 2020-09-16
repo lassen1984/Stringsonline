@@ -150,7 +150,7 @@ export class BasketService {
   }
 
 
-  jasonParse = JSON.parse(localStorage.getItem(this.basketKey)).length;
+  // jasonParse = JSON.parse(localStorage.getItem(this.basketKey)).length;
 
 
 
