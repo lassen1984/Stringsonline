@@ -1,18 +1,30 @@
 section{
-    width: 100%;
-    height: 300px;
-    background-color: green;
+    width: 500px;
+    height: 275px;
+    background-color: #2C3737;
     color: white;
     position: absolute;
+    z-index: 50;
+    padding: 2em;
+    border-radius: 0 50px 50px 50px;
+    border: solid 10px #D10061;
+    
+    
     
     
 
 button{
-    padding: 1em;
+    padding: 1.5em 2em;
+    background-color: #00F9B6;
+    border-radius: 30px;
+    float: right;
+    margin-top: 20px;
+    border: 0;
+    font-size: 1em;
 } 
 }
 
 .hide_cookie_banner{
-    margin-left: -100%;
+    margin-left: -150%;
     transition: 1500ms;
 }
