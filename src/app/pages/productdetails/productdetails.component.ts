@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { BasketService } from 'src/app/services/basket.service';
 import { HttpService } from 'src/app/services/http.service';
 
 @Component({
@@ -10,7 +11,7 @@ import { HttpService } from 'src/app/services/http.service';
 
 export class ProductdetailsComponent implements OnInit {
 
-  constructor(private route: ActivatedRoute, private http: HttpService) { }
+  constructor(private route: ActivatedRoute, private http: HttpService, public basketservice: BasketService) { }
 
   details: any
 

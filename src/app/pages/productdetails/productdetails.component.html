@@ -1,7 +1,7 @@
 <section *ngIf="details">
 
-    <figure>
-        <img src="{{details.image_fullpath}}" alt="">
+    <figure class="brandimage">
+        <img src="{{details.image.fullpath}}" alt="">
     </figure>
 
     <article>
@@ -9,9 +9,33 @@
         <p>{{details.description_long}}</p>
     </article>
 
-    <figure>
+    <div class="wrapper">
 
-    </figure>
+        <figure class="brandimage">
+            <img src="{{details.brand_image}}" alt="">
+        </figure>
+
+        <div class="price">
+
+
+            <p class="crurrentprice">Pris: DKK {{details.price}}</p>
+
+
+            <button (click)="basketservice.addToBasket(details.id)">Læg i kurv</button>
+
+            <p>lagerantal</p>
+
+            <div>
+                <p>*****</p>
+            </div>
+
+
+
+        </div>
+
+
+
+    </div>
 
 
 </section>

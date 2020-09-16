@@ -2,8 +2,61 @@ section{
     display: grid;
     grid-template-columns: 1fr 2fr 1fr;
 
+    img{
+        width: 100%;
+    }
+
+
+    article{
+        padding: 1em;
+
+        h1{
+            padding: 0.5em 0;
+            font-size: 1.5em;
+        }
+
+        p{
+            color: #AFAFAF;
+        }
+    }
+
+
+
+.brandimage{
+    background-color: white;
+    height: 175px;
+    padding: 0.5em;
+
+    img{
+        margin-top: 35%;
+    };
+    
 }
 
-article{
-    padding: 1em;
+.price{
+    margin-top: 1em;
+    display: grid;
+    grid-template-rows: 4;
+    text-align: right;
+    height: 200px;
+    gap: 0.5em;
+
+    .crurrentprice{
+        align-self: center;
+        border: solid 1px #393939;
+        padding: 0.5em;
+        border-radius: 5px;
+    }
+
+    button{
+        background-color: #D10061;
+        border-radius: 5px;
+        border: 0;
+        color: white;
+    }
+
 }
+
+
+}
+
