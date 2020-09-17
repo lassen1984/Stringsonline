@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, ViewChildren } from '@angular/core';
 import { BasketService } from 'src/app/services/basket.service';
 import { UserService } from 'src/app/services/user.service';
 
@@ -11,6 +11,7 @@ import { UserService } from 'src/app/services/user.service';
 export class NavigationComponent implements OnInit {
 
   @ViewChild('mainNav') mainNav;
+  @ViewChild('hideme') hideme;
 
   isItLoggedIn = false;
 
@@ -24,6 +25,8 @@ export class NavigationComponent implements OnInit {
 
   toggleClass() {
     this.mainNav.nativeElement.classList.toggle('menu_cornered');
+    this.hideme.nativeElement.classList.toggle('hideInCorner');
+
   };
 
 

@@ -24,7 +24,7 @@ export class BasketComponent implements OnInit {
     for (const iterator of this.bs.basketItems) {
       let data = await <any>this.http.getProductDetails(iterator.id).toPromise();
       data = data.item;
-      console.log(data);
+      // console.log(data);
       this.products.push({
 
         image: data.image.fullpath,
@@ -42,7 +42,7 @@ export class BasketComponent implements OnInit {
       for (const iterator of this.bs.basketItems) {
         let data = await <any>this.http.getProductDetails(iterator.id).toPromise();
         data = data.item;
-        console.log(data);
+        // console.log(data);
         this.products.push({
 
           image: data.image.fullpath,
@@ -57,6 +57,16 @@ export class BasketComponent implements OnInit {
     })
 
   }
+
+  totalDue() {
+
+
+
+
+
+  }
+
+
 
 
 

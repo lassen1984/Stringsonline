@@ -150,6 +150,17 @@ export class BasketService {
   }
 
 
+  totalBasketQuantity() {
+    let quantity = 0;
+
+    for (let i = 0; i < this.basketItems.length; i++) {
+
+      quantity += this.basketItems[i].quantity
+
+    }
+    return quantity;
+  }
+
   // jasonParse = JSON.parse(localStorage.getItem(this.basketKey)).length;
 
 

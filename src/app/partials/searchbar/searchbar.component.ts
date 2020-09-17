@@ -31,6 +31,8 @@ export class SearchbarComponent implements OnInit {
 
     this.router.navigateByUrl(`/resultater/${keyword}`);
 
+
+
   }
 
 }

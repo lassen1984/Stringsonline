@@ -10,7 +10,7 @@
 
     <div class="gridcontainer">
 
-        <ul class="mainnav">
+        <ul class="mainnav hideInCorner" #hideme>
             <li><a routerLink="/">Forside</a></li>
 
             <li><a routerLink="/betingelser">Salgs & handelsbetingelser</a></li>
@@ -37,7 +37,7 @@
 
                     <a routerLink="/kurv"><span class="material-icons basket">
                             shopping_basket <div class="bubble">
-                                <p></p>
+                                <div>{{basketService.totalBasketQuantity()}}</div>
                             </div>
                         </span></a>
                 </div>

@@ -9,7 +9,10 @@ import { HttpService } from 'src/app/services/http.service';
 })
 export class ProductsComponent implements OnInit {
 
-  product: any;
+  allProducts: any;
+  productsToShow: any;
+  choosenBrand: string = '';
+  brands: any = [];
 
   productId = this.route.snapshot.params.id;
 
@@ -17,8 +20,15 @@ export class ProductsComponent implements OnInit {
 
   async ngOnInit(): Promise<void> {
 
-    this.product = await this.http.getProduct(this.productId).toPromise();
-    this.product = this.product.group.products;
+    this.getProducts(this.productId);
+    this.productsToShow = this.allProducts;
+    // this.populateBands();
+    // this.product = 
+
+
+
+    // .toPromise();
+    // this.product = this.product.group.products;
     // console.log(this.product);
 
 
@@ -27,10 +37,51 @@ export class ProductsComponent implements OnInit {
 
       if (res instanceof NavigationEnd) {
         this.productId = this.route.snapshot.params.id;
-        this.product = await this.http.getProduct(this.productId).toPromise();
-        this.product = this.product.group.products;
+        this.getProducts(this.productId);
+        // this.populateBands();
+        // this.product = await this.http.getProduct(this.productId).toPromise();
+        // this.product = this.product.group.products;
       }
     });
   }
+
+  getProducts(groupId: number) {
+    this.allProducts = [];
+    this.productsToShow = [];
+    this.http.getProduct(groupId).subscribe((res: any) => {
+      this.allProducts = res.group.products;
+      this.populateBands();
+      this.productsToShow = this.allProducts;
+    })
+  }
+
+  populateBands() {
+    this.brands = [];
+    for (let i = 0; i < this.allProducts.length; i++) {
+      if (!this.brands.some(e => e === this.allProducts[i].brand)) {
+        this.brands.push(this.allProducts[i].brand)
+      }
+    }
+  }
+
+  chooseProducer(brand: string) {
+    // this.choosenBrand = brand;
+    this.productsToShow = [];
+    if (brand) {
+      for (let i = 0; i < this.allProducts.length; i++) {
+        if (this.allProducts[i].brand === brand) {
+          this.productsToShow.push(this.allProducts[i]);
+        }
+      }
+    }
+    else {
+      this.productsToShow = this.allProducts;
+    }
+  }
+
+
+
+
+
 
 }

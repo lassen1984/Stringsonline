@@ -1,5 +1,17 @@
-<section *ngIf="product">
-    <app-product-card *ngFor="let item of product" [image]="item.image_fullpath" [name]="item.name"
-        [description_short]="item.description_short" [stock]="item.stock" [price]="item.price" [id]="item.id">
-    </app-product-card>
+<section>
+    <section>
+        <select #brandSelect (change)="chooseProducer(brandSelect.value)">
+            <!-- change opdaterer produktliste, til kun at vise produkter fra dennes producent  -->
+
+            <option [value]="''">Producent</option>
+            <option *ngFor="let item of brands" [value]="item">{{item}}</option>
+        </select>
+
+    </section>
+    <section *ngIf="productsToShow">
+        <app-product-card *ngFor="let item of productsToShow" [image]="item.image_fullpath" [name]="item.name"
+            [description_short]="item.description_short" [stock]="item.stock" [price]="item.price" [id]="item.id">
+        </app-product-card>
+    </section>
+
 </section>
