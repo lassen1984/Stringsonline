@@ -20,9 +20,15 @@ export class NavigationComponent implements OnInit {
 
   }
 
+
+
   toggleClass() {
     this.mainNav.nativeElement.classList.toggle('menu_cornered');
-  }
+  };
+
+
+
+
 
 
 

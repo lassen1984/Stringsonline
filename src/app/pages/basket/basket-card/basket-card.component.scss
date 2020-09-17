@@ -96,3 +96,15 @@ grid-template-columns: 1fr 1fr 1fr;
 
 
 }
+
+@media (max-width: 690px){
+    article{
+        
+        grid-template-columns: 1.5fr 3fr;
+
+    }
+
+    figure{
+        display: none;
+    }
+}

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Local } from 'protractor/built/driverProviders';
+// import { Local } from 'protractor/built/driverProviders';
 
 @Component({
   selector: 'app-frontpage',

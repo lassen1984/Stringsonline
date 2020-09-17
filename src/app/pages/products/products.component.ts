@@ -16,9 +16,10 @@ export class ProductsComponent implements OnInit {
   constructor(private route: ActivatedRoute, private http: HttpService, private router: Router) { }
 
   async ngOnInit(): Promise<void> {
+
     this.product = await this.http.getProduct(this.productId).toPromise();
     this.product = this.product.group.products;
-    console.log(this.product);
+    // console.log(this.product);
 
 
     this.router.events.subscribe(async res => {

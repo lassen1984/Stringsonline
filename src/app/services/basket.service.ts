@@ -117,7 +117,7 @@ export class BasketService {
 
             this.http.post('https://api.mediehuset.net/stringsonline/cart', body).subscribe((res: any) => {
 
-              var added = res;
+              let added = res;
             })
           }
         })

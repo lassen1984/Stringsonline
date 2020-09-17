@@ -22,7 +22,12 @@ figure{
 .textwrapper{
     p{
         color: #B1B1B1;
-             
+        
+        
+ a{
+     text-decoration: none;
+     color: #00FAB4;
+ }            
 }
 }
 
@@ -54,4 +59,20 @@ button{
 
 
 
+}
+
+@media (max-width: 680px){
+    article{
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap:1em;
+    
+        height: 200px;
+        border:solid 1px #393939;
+        margin-bottom: 1em;
+
+        figure{
+            display: none;
+        }
+}
 }

@@ -15,7 +15,7 @@ export class SidecategoryComponent implements OnInit {
   async ngOnInit(): Promise<void> {
     this.products = await this.http.getProducts().toPromise();
     this.products = this.products.productgroups.items
-    console.log(this.products);
+    // console.log(this.products);
 
   }
 }

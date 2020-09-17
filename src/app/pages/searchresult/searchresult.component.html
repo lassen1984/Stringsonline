@@ -1,1 +1,5 @@
 <p>searchresult works!</p>
+
+<app-product-card *ngFor="let item of products" [image]="item.image_fullpath" [name]="item.name"
+    [description_short]="item.description_short" [stock]="item.stock" [price]="item.price" [id]="item.id">
+</app-product-card>

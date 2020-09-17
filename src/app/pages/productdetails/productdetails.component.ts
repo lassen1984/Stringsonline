@@ -22,7 +22,7 @@ export class ProductdetailsComponent implements OnInit {
     const id = this.route.snapshot.params.id;
 
     let product = await <any>this.http.getProductDetails(id).toPromise(); //Brug "any" for at få adgang til array! strict
-    console.log(product);
+    // console.log(product);
 
 
 
