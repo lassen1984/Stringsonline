@@ -17,7 +17,7 @@ export class BasketService {
 
 
   constructor(private http: HttpService) {
-    this.populateBasket();
+    this.populateBasket(); //Opdaterer on init global
   }
 
 
@@ -82,7 +82,7 @@ export class BasketService {
     localStorage.setItem(this.basketKey, JSON.stringify(this.basketItems));
     this.basketSubject.next('Basket changed');
 
-    //TODO: Tæl en ned
+    //TO DO, Tæl en ned
     //API: Opdater linje i kurv
   }
 
@@ -100,7 +100,7 @@ export class BasketService {
     localStorage.setItem(this.basketKey, JSON.stringify(basketItems));
     location.reload();
 
-    //TODO: fjern linje helt
+    //TO DO, fjern linje helt
     //API: Slet linje fra kurv
   }
 
@@ -139,6 +139,8 @@ export class BasketService {
     if (basket) {
       this.basketItems = JSON.parse(basket);
     }
+
+    //TO DO:Læg til
   }
 
   deleteBasket() {
@@ -146,6 +148,7 @@ export class BasketService {
 
     location.reload();
 
+    //TO DO, "Tøm array" => [], opdater
   }
 
 
@@ -158,6 +161,10 @@ export class BasketService {
 
     }
     return quantity;
+
+    //TO DO, loop over alle basket items, plus dem sammen, indskyd total sum i markup
+
+
   }
 
 
