@@ -23,6 +23,26 @@ export class HttpService {
     return null;
   }
 
+
+
+  getProduct(id) {
+    return this.http.get(`https://api.mediehuset.net/stringsonline/productgroups/${id}`);
+  }
+
+
+  getProducts() {
+    return this.http.get('https://api.mediehuset.net/stringsonline/');
+  }
+
+  getProductDetails(id) {
+    return this.http.get(`https://api.mediehuset.net/stringsonline/products/${id}`);
+  }
+
+
+
+
+  //Alternativt, kan disse bruges, i stedet for mine statiske:
+
   get(url: string) {
     let ourHeaders = this.getHeaders();
     return this.http.get(url, { headers: ourHeaders });
@@ -43,22 +63,5 @@ export class HttpService {
     return this.http.delete(url, { headers: ourHeaders });
   }
 
-  // getLogin(header) {
-  //   return this.http.post('https://api.mediehuset.net/token', header);
-  // }
-
-  getProduct(id) {
-    return this.http.get(`https://api.mediehuset.net/stringsonline/productgroups/${id}`);
-  }
-
-
-
-  getProducts() {
-    return this.http.get('https://api.mediehuset.net/stringsonline/');
-  }
-
-  getProductDetails(id) {
-    return this.http.get(`https://api.mediehuset.net/stringsonline/products/${id}`);
-  }
 
 }

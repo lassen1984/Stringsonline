@@ -58,13 +58,7 @@ export class BasketComponent implements OnInit {
 
   }
 
-  totalDue() {
 
-
-
-
-
-  }
 
 
 

@@ -83,7 +83,6 @@ export class BasketService {
     this.basketSubject.next('Basket changed');
 
     //TODO: Tæl en ned
-
     //API: Opdater linje i kurv
   }
 
@@ -100,8 +99,8 @@ export class BasketService {
     basketItems.splice(index, 1);
     localStorage.setItem(this.basketKey, JSON.stringify(basketItems));
     location.reload();
-    //TODO: fjern linje helt
 
+    //TODO: fjern linje helt
     //API: Slet linje fra kurv
   }
 
@@ -160,19 +159,6 @@ export class BasketService {
     }
     return quantity;
   }
-
-  // jasonParse = JSON.parse(localStorage.getItem(this.basketKey)).length;
-
-
-
-
-  // countItemsInBasket() {
-
-  //   console.log(this.jasonParse);
-
-  // return JSON.parse(localStorage.getItem(this.basketKey)).length
-  // }
-
 
 
 
